@@ -13,7 +13,7 @@ public class ResourcesReq {
     }
 
     public static Response getSingleUserResource(String id){
-        return RestAssured.given().log().all().get(Constants.baseURL+Constants.resEndPoint+id);
+        return RestAssured.given().log().all().get(Constants.baseURL+Constants.resEndPoint+"/"+id);
 
     }
 
