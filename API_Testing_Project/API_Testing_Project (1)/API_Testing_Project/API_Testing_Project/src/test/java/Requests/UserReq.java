@@ -6,6 +6,16 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class UserReq {
+
+    public static Response getUserList(){
+        return RestAssured.given().log().all().get(Constants.baseURL+Constants.userEndPoint);
+
+    }
+
+    public static Response getSingleUserList(String id){
+        return RestAssured.given().log().all().get(Constants.baseURL+Constants.userEndPoint+"/"+id);
+
+    }
     public static Response createUser(String username, String job){
         return  RestAssured.given().log().all().contentType(ContentType.JSON)
                 .body("{\n" +
